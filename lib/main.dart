@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Test hotloads'),
+      home: const MyHomePage(title: 'Test'),
     );
   }
 }
@@ -31,20 +31,27 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _MyHomePageState extends State<MyHomePage>
+  with SingleTickerProviderStateMixin {
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  late TabController tabController;
+  
+  final testColor1 = const Color(0xFF068441);
+
+  @override
+  void initState(){
+    tabController = TabController(length: 2, vsync: this);
+    super.initState();
+  }
+
+  @override
+  void dispose(){
+    super.dispose();
+    tabController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final scr_height = MediaQuery.of(context).size.height;
-    final scr_width = MediaQuery.of(context).size.width;
-
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -72,9 +79,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(38),
                     ),
-                    child: const Image(image: AssetImage("assets/images/photo.png"),
-                             width: 110,
-                             height: 110,),
+                    child:
+                      const Image(image: AssetImage("assets/images/photo.png"),
+                        width: 110,
+                        height: 110,
+                      ),
                   )
                 ],
               ),
@@ -90,6 +99,70 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   )
                 ],
+              ),
+              Expanded(
+                child:
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 14, 0, 0),
+                    child: Scaffold(
+                      appBar: TabBar(
+                        controller: tabController,
+                        indicatorSize: TabBarIndicatorSize.tab,
+                        indicatorColor: testColor1,
+                        labelColor: Colors.black,
+                        unselectedLabelColor: Colors.black.withAlpha(140),
+                        labelStyle: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        tabs:const [
+                          Tab(text: "Профиль",),
+                          Tab(text: "Настройки",)
+                        ]
+                      ),
+                      body: TabBarView(
+                        controller: tabController,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children:[
+                              const SizedBox(height: 30,),
+                              const Text(
+                                "У вас подключено",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black
+                                ),
+                              ),
+                              const SizedBox(height: 8,),
+                              Text(
+                                "Подписки, автоплатежи и сервисы на которые вы подписались",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black.withAlpha(140)
+                                ),
+                              )
+                            ]
+                          ),
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                "В разработке",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  )
               )
             ],
           ),
