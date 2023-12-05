@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage>
           padding: const EdgeInsets.all(14.0),
           child: Column(
             children: [
-              const SizedBox(height: 30),
+              const SizedBox(height: 5),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -143,7 +143,161 @@ class _MyHomePageState extends State<MyHomePage>
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black.withAlpha(140)
                                 ),
-                              )
+                              ),
+                              const SizedBox(height: 20,),
+                              SizedBox(
+                                height: 130,
+                                child: ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: [
+                                    Container(
+                                      margin: const EdgeInsets.all(5),
+                                      width: 216,
+                                      height: 130,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        boxShadow: [BoxShadow(
+                                            color: Colors.grey.withOpacity(0.5),
+                                            spreadRadius: 0.5,
+                                            blurRadius: 5,
+                                            offset: const Offset(0,0)
+                                        )],
+                                        color: Colors.white,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          const Padding(
+                                            padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
+                                            child: Row(
+                                              children: [
+                                                Image(image: AssetImage("assets/images/logo.png"),
+                                                ),
+                                                SizedBox(width: 12,),
+                                                Text("СберПрайм",
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 16,
+                                                    color: Colors.black,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          const SizedBox(height: 18,),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            children: [
+                                              Padding(padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      const Text("Платёж 9 июля",
+                                                        style: TextStyle(
+                                                          fontWeight: FontWeight.w500,
+                                                          fontSize: 14,
+                                                          color: Colors.black,
+                                                        ),
+                                                      ),
+                                                      Text("199 ₽ в месяц",
+                                                        style: TextStyle(
+                                                          fontWeight: FontWeight.w500,
+                                                          fontSize: 14,
+                                                          color: Colors.black.withOpacity(0.55),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  )
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8,),
+                                    Container(
+                                      margin: const EdgeInsets.all(5),
+                                      width: 216,
+                                      height: 130,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        boxShadow: [BoxShadow(
+                                            color: Colors.grey.withOpacity(0.5),
+                                            spreadRadius: 0.5,
+                                            blurRadius: 5,
+                                            offset: const Offset(0,0)
+                                        )],
+                                        color: Colors.white,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          const Padding(
+                                            padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
+                                            child: Row(
+                                              children: [
+                                                Image(image: AssetImage("assets/images/percent.png"),
+                                                ),
+                                                SizedBox(width: 12,),
+                                                Text("Переводы",
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 16,
+                                                    color: Colors.black,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          const SizedBox(height: 18,),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            children: [
+                                              Padding(padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      const Text("Автопродление 21 августа",
+                                                        style: TextStyle(
+                                                          fontWeight: FontWeight.w500,
+                                                          fontSize: 14,
+                                                          color: Colors.black,
+                                                        ),
+                                                      ),
+                                                      Text("199 ₽ в месяц",
+                                                        style: TextStyle(
+                                                          fontWeight: FontWeight.w500,
+                                                          fontSize: 14,
+                                                          color: Colors.black.withOpacity(0.55),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  )
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(height: 34,),
+                              const Text(
+                                "Тарифы и лимиты",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.black
+                                ),
+                              ),
+                              const SizedBox(height: 8,),
+                              Text(
+                                "Для операций в Сбербанк Онлайн",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black.withAlpha(140)
+                                ),
+                              ),
                             ]
                           ),
                           const Row(
