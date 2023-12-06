@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'color.dart';
+import 'list_item.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,8 +36,29 @@ class _MyHomePageState extends State<MyHomePage>
   with SingleTickerProviderStateMixin {
 
   late TabController tabController;
-  
+
   final testColor1 = const Color(0xFF068441);
+
+  final List<ListItem> _items = [
+    ListItem(
+        leading: Image(image: AssetImage("assets/images/ic_36_speedometer.png")),
+        title: "Изменить суточный лимит",
+        subtitle: "На платежи и переводы",
+        trailing: Icon(Icons.arrow_forward_ios_sharp)
+    ),
+    ListItem(
+        leading: Image(image: AssetImage("assets/images/ic_36_percent.png")),
+        title: "Переводы без комиссии",
+        subtitle: "Показать остаток в этом месяце",
+        trailing: Icon(Icons.arrow_forward_ios_sharp)
+    ),
+    ListItem(
+        leading: Image(image: AssetImage("assets/images/ic_36_arrows_forward_back.png")),
+        title: "Информация о тарифах и лимитах",
+        subtitle: " ",
+        trailing: Icon(Icons.arrow_forward_ios_sharp)
+    ),
+  ];
 
   @override
   void initState(){
@@ -298,6 +320,32 @@ class _MyHomePageState extends State<MyHomePage>
                                     color: Colors.black.withAlpha(140)
                                 ),
                               ),
+                              Expanded(
+                                child: ListView.builder(
+                                  itemCount: _items.length,
+                                  itemBuilder: (_, index){
+                                    return Column(
+                                      children: [ListTile(
+                                        leading: _items[index].leading,
+                                        title: Text(_items[index].title),
+                                        titleTextStyle: const TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.black
+                                        ),
+                                        subtitle: Text(_items[index].subtitle),
+                                        subtitleTextStyle: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.black.withOpacity(0.55)
+                                        ),
+                                        trailing: _items[index].trailing,
+                                      ),
+                                    ]
+                                    );
+                                  },
+                                )
+                              )
                             ]
                           ),
                           const Row(
