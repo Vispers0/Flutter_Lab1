@@ -1,16 +1,15 @@
-# lab_1_flutter
+# Fultter. Лабораторная работа №1
+Задание: разработать дизайн интерфейса, предоставленного в Figma с помощью Flutter\
+Выполнил Степанов Александр\
+Версия Flutter: 3.16.3-stable\
+Версия Dart: 3.2.3\
+IDE: Android Studio Giraffe\
+Протестировано на платформах:
+* Web: Google Chrome
+* Android: Realme C15 (Android 11)
 
-A new Flutter project.
+К сожалению, создать прокручиваемый экран не удалось\
+![photo_2023-12-07_20-46-30](https://github.com/Vispers0/Flutter_Lab1/assets/83211847/1e310090-514a-4d15-8331-000dfe651c1b)
+![photo_2023-12-07_20-44-56](https://github.com/Vispers0/Flutter_Lab1/assets/83211847/6d358ed4-731f-44be-b39b-60a16922ad35)
+![photo_2023-12-07_20-44-56 (2)](https://github.com/Vispers0/Flutter_Lab1/assets/83211847/b325a1df-ed3c-4c8f-8f7c-d6681c33a25d)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
