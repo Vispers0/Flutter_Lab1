@@ -321,11 +321,11 @@ class _MyHomePageState extends State<MyHomePage>
                                 ),
                               ),
                               Expanded(
-                                child: ListView.builder(
+                                child: ListView.separated(
                                   itemCount: _items.length,
+                                  separatorBuilder: (_, index) => const Divider(height: 1,),
                                   itemBuilder: (_, index){
-                                    return Column(
-                                      children: [ListTile(
+                                    return ListTile(
                                         leading: _items[index].leading,
                                         title: Text(_items[index].title),
                                         titleTextStyle: const TextStyle(
@@ -340,12 +340,10 @@ class _MyHomePageState extends State<MyHomePage>
                                           color: Colors.black.withOpacity(0.55)
                                         ),
                                         trailing: _items[index].trailing,
-                                      ),
-                                    ]
-                                    );
-                                  },
+                                      );
+                                    },
                                 )
-                              )
+                              ),
                             ]
                           ),
                           const Row(
